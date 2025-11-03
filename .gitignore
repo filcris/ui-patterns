@@ -1,0 +1,16 @@
+﻿# Node
+node_modules/
+dist/
+storybook-static/
+coverage/
+.vite/
+.husky/_/
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+# IDE
+.vscode/
+.idea/
+.DS_Store

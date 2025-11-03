@@ -1,0 +1,2 @@
+﻿# garantir LF nos hooks do Husky
+.husky/* text eol=lf
