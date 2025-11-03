@@ -1,14 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import './styles/theme.css'
-import { ThemeProvider } from './hooks/useTheme'
-import App from './App'
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+import "./index.css";
+import "./styles/theme.css";
+import App from "./App";
+import { ThemeProvider } from "./hooks/useTheme";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ThemeProvider>
       <App />
     </ThemeProvider>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);

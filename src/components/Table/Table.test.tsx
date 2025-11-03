@@ -1,4 +1,5 @@
 ﻿import { render, screen, fireEvent } from "@testing-library/react";
+
 import { Table } from "./Table";
 
 type Row = { a: string; b: string };
@@ -6,7 +7,10 @@ type Row = { a: string; b: string };
 test("renderiza headers e células", () => {
   render(
     <Table<Row>
-      columns={[{ key: "a", header: "Col A" }, { key: "b", header: "Col B" }]}
+      columns={[
+        { key: "a", header: "Col A" },
+        { key: "b", header: "Col B" },
+      ]}
       data={[{ a: "X", b: "Y" }]}
       caption="Tabela teste"
     />
@@ -19,7 +23,10 @@ test("onRowClick funciona com Enter", () => {
   const onRowClick = vi.fn();
   render(
     <Table<Row>
-      columns={[{ key: "a", header: "A" }, { key: "b", header: "B" }]}
+      columns={[
+        { key: "a", header: "A" },
+        { key: "b", header: "B" },
+      ]}
       data={[{ a: "1", b: "2" }]}
       onRowClick={onRowClick}
     />

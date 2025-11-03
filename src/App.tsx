@@ -1,5 +1,5 @@
-﻿import { ThemeToggle } from "./components/ThemeToggle/ThemeToggle";
-import { Button } from "./components/Button/Button";
+﻿import { Button } from "./components/Button/Button";
+import { ThemeToggle } from "./components/ThemeToggle/ThemeToggle";
 
 export default function App() {
   return (

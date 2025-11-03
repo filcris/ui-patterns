@@ -1,7 +1,8 @@
 ﻿import React from "react";
 import { useForm } from "react-hook-form";
-import { Input } from "../Input/Input";
+
 import { Button } from "../Button/Button";
+import { Input } from "../Input/Input";
 
 interface FormData {
   email: string;

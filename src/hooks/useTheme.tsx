@@ -1,43 +1,22 @@
-import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
+﻿import { useEffect, useState } from "react";
 
-type Theme = "light" | "dark";
-type ThemeCtx = {
-  theme: Theme;
-  setTheme: (t: Theme) => void;
-  toggleTheme: () => void;
-};
+export type Theme = "light" | "dark";
 
-const ThemeContext = createContext<ThemeCtx | undefined>(undefined);
-
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const prefersDark = typeof window !== "undefined" &&
-    window.matchMedia?.("(prefers-color-scheme: dark)").matches;
-
-  const [theme, setThemeState] = useState<Theme>(prefersDark ? "dark" : "light");
-
-  useEffect(() => {
-    const saved = localStorage.getItem("ui-theme") as Theme | null;
-    if (saved) setThemeState(saved);
-  }, []);
+export function useTheme() {
+  const [theme, setThemeState] = useState<Theme>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("ui-theme");
+      return (saved as Theme) || "light";
+    }
+    return "light";
+  });
 
   useEffect(() => {
     localStorage.setItem("ui-theme", theme);
-    const root = document.documentElement;
-    root.classList.toggle("dark", theme === "dark");
-    root.setAttribute("data-theme", theme);
+    document.documentElement.classList.toggle("dark", theme === "dark");
   }, [theme]);
 
-  const value = useMemo<ThemeCtx>(() => ({
-    theme,
-    setTheme: (t) => setThemeState(t),
-    toggleTheme: () => setThemeState((p) => (p === "dark" ? "light" : "dark")),
-  }), [theme]);
+  const toggleTheme = () => setThemeState((prev) => (prev === "light" ? "dark" : "light"));
 
-  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
-}
-
-export function useTheme() {
-  const ctx = useContext(ThemeContext);
-  if (!ctx) throw new Error("useTheme must be used within ThemeProvider");
-  return ctx;
+  return { theme, toggleTheme };
 }
