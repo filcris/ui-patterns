@@ -5,7 +5,7 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   parserOptions: { ecmaVersion: "latest", sourceType: "module", ecmaFeatures: { jsx: true } },
   settings: { react: { version: "detect" } },
-  plugins: ["@typescript-eslint","react","react-hooks","jsx-a11y","import","prettier","vitest"],
+  plugins: ["@typescript-eslint","react","react-hooks","jsx-a11y","import","prettier"],
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -14,8 +14,7 @@ module.exports = {
     "plugin:jsx-a11y/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
-    "plugin:vitest/recommended",
-    "plugin:prettier/recommended",
+    "plugin:prettier/recommended"
   ],
   rules: {
     "react/react-in-jsx-scope": "off",
@@ -24,13 +23,27 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["**/*.stories.@(ts|tsx)"],
-      rules: { "import/no-anonymous-default-export": "off" }
+      files: ["**/*.test.{ts,tsx}", "src/tests/**"],
+      env: { node: true, browser: true },
+      globals: {
+        // Vitest globals
+        vi: "readonly",
+        describe: "readonly",
+        it: "readonly",
+        test: "readonly",
+        expect: "readonly",
+        beforeAll: "readonly",
+        afterAll: "readonly",
+        beforeEach: "readonly",
+        afterEach: "readonly",
+      },
+      rules: {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
     },
     {
-      files: ["**/*.test.@(ts|tsx)","src/tests/**"],
-      env: { "vitest-globals/env": true },
-      rules: { "@typescript-eslint/no-explicit-any": "off" }
+      files: ["**/*.stories.{ts,tsx}"],
+      rules: { "import/no-anonymous-default-export": "off" }
     }
   ]
 };
