@@ -1,4 +1,4 @@
-import{I as s}from"./Input-CLUMq6E9.js";import"./jsx-runtime-CDt2p4po.js";import"./index-GiUgBvb1.js";const d={title:"Components/Input",component:s,parameters:{layout:"centered"},argTypes:{label:{control:"text"},placeholder:{control:"text"},error:{control:"text"}}},e={args:{label:"Email",placeholder:"exemplo@dominio.pt"}},r={args:{label:"Email",placeholder:"exemplo@dominio.pt",error:"Endereço de email inválido."}};var o,a,t;e.parameters={...e.parameters,docs:{...(o=e.parameters)==null?void 0:o.docs,source:{originalSource:`{
+import{I as s}from"./Input-BvP8LSiP.js";import"./jsx-runtime-dsZ8nYAA.js";import"./index-GiUgBvb1.js";const d={title:"Components/Input",component:s,parameters:{layout:"centered"},argTypes:{label:{control:"text"},placeholder:{control:"text"},error:{control:"text"}}},e={args:{label:"Email",placeholder:"exemplo@dominio.pt"}},r={args:{label:"Email",placeholder:"exemplo@dominio.pt",error:"Endereço de email inválido."}};var o,a,t;e.parameters={...e.parameters,docs:{...(o=e.parameters)==null?void 0:o.docs,source:{originalSource:`{
   args: {
     label: "Email",
     placeholder: "exemplo@dominio.pt"
