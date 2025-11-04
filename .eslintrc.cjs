@@ -4,7 +4,7 @@ module.exports = {
   env: { browser: true, es2022: true },
   parser: "@typescript-eslint/parser",
   parserOptions: { ecmaVersion: "latest", sourceType: "module", ecmaFeatures: { jsx: true } },
-  settings: { react: { version: "detect" } },
+  settings: { react: { version: "detect" }, "import/resolver": { node: { extensions: [".ts",".tsx",".js",".jsx"] } } } },
   plugins: ["@typescript-eslint","react","react-hooks","jsx-a11y","import","prettier"],
   extends: [
     "eslint:recommended",
@@ -47,3 +47,4 @@ module.exports = {
     }
   ]
 };
+
