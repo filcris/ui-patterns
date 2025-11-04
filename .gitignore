@@ -14,3 +14,6 @@ pnpm-debug.log*
 .vscode/
 .idea/
 .DS_Store
+
+# evitar cópias aninhadas do projeto
+ui-patterns/ui-patterns/
