@@ -17,3 +17,6 @@ pnpm-debug.log*
 
 # evitar cópias aninhadas do projeto
 ui-patterns/ui-patterns/
+
+# evitar cópias aninhadas do projeto
+ui-patterns/ui-patterns/
