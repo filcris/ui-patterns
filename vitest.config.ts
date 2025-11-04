@@ -1,6 +1,6 @@
-/// <reference types="vitest" />
-import { defineConfig } from "vite";
+﻿/// <reference types="vitest" />
 import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react()],
@@ -10,7 +10,7 @@ export default defineConfig({
     setupFiles: "./src/tests/setup.ts",
     coverage: {
       provider: "v8",
-      reporter: ["text", "lcov"],
+      reporter: ["text", "lcov", "json-summary"],
     },
   },
 });
