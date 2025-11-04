@@ -1,2 +1,3 @@
-﻿# garantir LF nos hooks do Husky
+﻿# Garantir que scripts e hooks ficam sempre com LF
+*.sh text eol=lf
 .husky/* text eol=lf

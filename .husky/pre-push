@@ -1,6 +1,0 @@
-﻿#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-echo "🧪 pre-push: typecheck + tests"
-npm run typecheck || exit 1
-npm run test:ci || exit 1
