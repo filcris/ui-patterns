@@ -8,13 +8,13 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook":"cross-env ROLLUP_SKIP_NODEJS_NATIVE=1 storybook build",
-    "test":"cross-env ROLLUP_SKIP_NODEJS_NATIVE=1 vitest",
+    "build-storybook": "cross-env ROLLUP_SKIP_NODEJS_NATIVE=1 storybook build",
+    "test": "cross-env ROLLUP_SKIP_NODEJS_NATIVE=1 vitest",
     "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings=0",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
-    "test:ci":"cross-env ROLLUP_SKIP_NODEJS_NATIVE=1 vitest run --coverage",
+    "test:ci": "cross-env ROLLUP_SKIP_NODEJS_NATIVE=1 vitest run --coverage",
     "prepare": "node .husky/install.cjs"
   },
   "dependencies": {
@@ -65,4 +65,3 @@
     "*.{js,jsx,json,css,md}": "prettier --write"
   }
 }
-
