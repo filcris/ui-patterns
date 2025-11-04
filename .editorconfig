@@ -1,0 +1,9 @@
+﻿root = true
+
+[*]
+end_of_line = lf
+charset = utf-8
+insert_final_newline = true
+
+[*.{json,js,ts,tsx,md,yml,yaml}]
+charset = utf-8
