@@ -44,7 +44,7 @@ O CI publica automaticamente a pasta storybook-static em cada push para main.
 O badge de cobertura (coverage-badge.svg) é atualizado pelo CI a partir do ficheiro coverage/coverage-summary.json.
 
 📝 Licença
-MIT © Filipa Moura / Cristina
+MIT © Cristina
 
 yaml
 Copiar código
