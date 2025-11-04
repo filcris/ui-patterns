@@ -1,5 +1,5 @@
-﻿import { vi } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+﻿import { render, screen, fireEvent } from "@testing-library/react";
+import { vi } from "vitest";
 
 import { Table } from "./Table";
 
@@ -37,4 +37,3 @@ test("onRowClick funciona com Enter", () => {
   fireEvent.keyDown(row, { key: "Enter", code: "Enter" });
   expect(onRowClick).toHaveBeenCalledTimes(1);
 });
-

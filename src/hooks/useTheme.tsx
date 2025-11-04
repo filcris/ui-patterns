@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createContext, useContext } from "react";
+﻿import React, { useEffect, useState, createContext, useContext } from "react";
 
 export type Theme = "light" | "dark";
 
@@ -27,16 +27,9 @@ export const ThemeProvider: React.FC<React.PropsWithChildren> = ({ children }) =
     }
   }, [theme]);
 
-  const toggleTheme = () =>
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  const toggleTheme = () => setTheme((prev) => (prev === "light" ? "dark" : "light"));
 
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
 };
 
 export const useTheme = () => useContext(ThemeContext);
-
-
